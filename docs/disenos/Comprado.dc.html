@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Marcar como comprado</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1F5F7A}a:hover{color:#174A5F}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #6F7773; font-family: 'Figtree', system-ui, sans-serif; color: #1B2420; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden">
+
+  <section style="background: #FFFFFF; border-radius: 24px 24px 0 0; padding: 10px 20px 24px; display: flex; flex-direction: column; gap: 18px">
+    <div style="width: 40px; height: 5px; border-radius: 999px; background: #CBD2CE; align-self: center"></div>
+
+    <div style="display: flex; align-items: flex-start; gap: 12px">
+      <div style="flex: 1; min-width: 0">
+        <div style="font-size: 13px; color: #5B6660">Marcar como comprado</div>
+        <div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 24px; font-weight: 700">Leche semidesnatada</div>
+        <div style="font-size: 13px; color: #5B6660">6 L · estimado ≈ 5,70 €</div>
+      </div>
+      <button aria-label="Cerrar" style="width: 40px; height: 40px; border-radius: 12px; border: none; background: #F2F4F3; display: flex; align-items: center; justify-content: center">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1B2420" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+      </button>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <label for="precio" style="font-size: 14px; font-weight: 700">¿Cuánto costó?</label>
+      <div style="display: flex; align-items: center; height: 60px; border-radius: 14px; border: 2px solid #1B2420; padding: 0 16px; gap: 8px">
+        <input id="precio" value="5,58" style="flex: 1; min-width: 0; border: none; outline: none; font-family: 'Bricolage Grotesque', sans-serif; font-size: 30px; font-weight: 700; color: #1B2420; background: transparent">
+        <span style="font-size: 22px; font-weight: 700; color: #5B6660">€</span>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <div style="font-size: 14px; font-weight: 700">¿Quién lo pagó?</div>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px">
+        <button style="height: 76px; border-radius: 14px; border: 2.5px solid #1F5F7A; background: #E1EEF3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-family: 'Figtree', sans-serif">
+          <span style="width: 34px; height: 34px; border-radius: 50%; background: #1F5F7A; color: #FFFFFF; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center">J</span>
+          <span style="font-size: 13px; font-weight: 700; color: #1B2420">Jorge</span>
+        </button>
+        <button style="height: 76px; border-radius: 14px; border: 1.5px solid #CBD2CE; background: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-family: 'Figtree', sans-serif">
+          <span style="width: 34px; height: 34px; border-radius: 50%; background: #9A3412; color: #FFFFFF; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center">E</span>
+          <span style="font-size: 13px; font-weight: 600; color: #1B2420">[Esposa]</span>
+        </button>
+        <button style="height: 76px; border-radius: 14px; border: 1.5px solid #CBD2CE; background: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-family: 'Figtree', sans-serif">
+          <span style="width: 34px; height: 34px; border-radius: 50%; background: #4D5B2A; color: #FFFFFF; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center">H</span>
+          <span style="font-size: 13px; font-weight: 600; color: #1B2420">[Hermano]</span>
+        </button>
+        <button style="height: 76px; border-radius: 14px; border: 1.5px solid #CBD2CE; background: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-family: 'Figtree', sans-serif">
+          <span style="width: 34px; height: 34px; border-radius: 50%; background: #6B3F7A; color: #FFFFFF; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center">C</span>
+          <span style="font-size: 13px; font-weight: 600; color: #1B2420">[Cuñada]</span>
+        </button>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <div style="font-size: 14px; font-weight: 700">¿Dónde?</div>
+      <div style="display: flex; gap: 8px">
+        <button style="height: 44px; padding: 0 18px; border-radius: 999px; border: none; background: #1B2420; color: #FFFFFF; font-family: 'Figtree', sans-serif; font-size: 15px; font-weight: 700">Mercadona</button>
+        <button style="height: 44px; padding: 0 18px; border-radius: 999px; border: 1.5px solid #CBD2CE; background: #FFFFFF; color: #1B2420; font-family: 'Figtree', sans-serif; font-size: 15px; font-weight: 600">Dia</button>
+        <button style="height: 44px; padding: 0 18px; border-radius: 999px; border: 1.5px solid #CBD2CE; background: #FFFFFF; color: #1B2420; font-family: 'Figtree', sans-serif; font-size: 15px; font-weight: 600">Otro</button>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <div style="font-size: 14px; font-weight: 700">¿Para quién es?</div>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; background: #F2F4F3; border-radius: 14px; padding: 4px">
+        <button style="height: 44px; border-radius: 11px; border: none; background: #FFFFFF; font-family: 'Figtree', sans-serif; font-size: 15px; font-weight: 700; color: #1F7A4D; box-shadow: 0 1px 3px rgba(27,36,32,0.12)">Común (se reparte)</button>
+        <button style="height: 44px; border-radius: 11px; border: none; background: transparent; font-family: 'Figtree', sans-serif; font-size: 15px; font-weight: 600; color: #5B6660">Personal</button>
+      </div>
+    </div>
+
+    <div style="display: flex; gap: 10px; align-items: center; background: #E2F2E9; border-radius: 12px; padding: 10px 12px; font-size: 13px; color: #14532D">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1F7A4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16h.01"></path></svg>
+      Se suma a las cuentas de octubre: Jorge adelanta 5,58 € y cada adulto pone 1,40 €.
+    </div>
+
+    <button style="height: 56px; border-radius: 16px; border: none; background: #C2410C; color: #FFFFFF; font-family: 'Figtree', sans-serif; font-size: 17px; font-weight: 700">Guardar compra</button>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

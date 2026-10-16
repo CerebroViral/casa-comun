@@ -1,0 +1,17 @@
+.env
+.env.*
+*secret*
+*Secret*
+*pass*
+*Pass*
+*.keystore
+*.jks
+signing*
+node_modules/
+test-results/
+playwright-report/
+.DS_Store
+Thumbs.db
+
+# Family photo used only as a design reference: stays on this PC, never published
+docs/disenos/cuadro-tareas-referencia.jpg

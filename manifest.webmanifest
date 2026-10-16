@@ -1,0 +1,21 @@
+{
+  "id": "./",
+  "name": "Casa Común",
+  "short_name": "Casa Común",
+  "description": "La lista de la compra, las cuentas del mes y los turnos de la casa.",
+  "lang": "es-ES",
+  "dir": "ltr",
+  "start_url": "./#/lista",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F2F4F3",
+  "theme_color": "#C2410C",
+  "categories": ["lifestyle", "productivity"],
+  "icons": [
+    { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "assets/icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

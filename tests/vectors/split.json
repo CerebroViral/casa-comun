@@ -1,0 +1,180 @@
+[
+  {
+    "name": "October example: four adults, three of them paid",
+    "members": [
+      { "key": "J", "created_at": "2026-10-01T08:00:00.000Z", "shares_costs": true },
+      { "key": "E", "created_at": "2026-10-01T08:01:00.000Z", "shares_costs": true },
+      { "key": "H", "created_at": "2026-10-01T08:02:00.000Z", "shares_costs": true },
+      { "key": "C", "created_at": "2026-10-01T08:03:00.000Z", "shares_costs": true }
+    ],
+    "purchases": [
+      { "paid_by": "J", "amount_cents": 8000, "scope": "common" },
+      { "paid_by": "E", "amount_cents": 2500, "scope": "common" },
+      { "paid_by": "H", "amount_cents": 4000, "scope": "common" }
+    ],
+    "expected": {
+      "total_cents": 14500, "during_cents": 14500, "big_shop_cents": 0, "has_big_shop": false, "sharers_count": 4,
+      "people": [
+        { "key": "J", "share_cents": 3625, "paid_cents": 8000, "paid_before_big_cents": 8000, "balance_cents": 4375 },
+        { "key": "E", "share_cents": 3625, "paid_cents": 2500, "paid_before_big_cents": 2500, "balance_cents": -1125 },
+        { "key": "H", "share_cents": 3625, "paid_cents": 4000, "paid_before_big_cents": 4000, "balance_cents": 375 },
+        { "key": "C", "share_cents": 3625, "paid_cents": 0, "paid_before_big_cents": 0, "balance_cents": -3625 }
+      ],
+      "transfers": [
+        { "from": "C", "to": "J", "amount_cents": 3625 },
+        { "from": "E", "to": "J", "amount_cents": 750 },
+        { "from": "E", "to": "H", "amount_cents": 375 }
+      ]
+    }
+  },
+  {
+    "name": "Remainder of 1 cent goes to the first member; single payer",
+    "members": [
+      { "key": "A", "created_at": "2026-10-01T08:00:00.000Z", "shares_costs": true },
+      { "key": "B", "created_at": "2026-10-01T08:01:00.000Z", "shares_costs": true },
+      { "key": "C", "created_at": "2026-10-01T08:02:00.000Z", "shares_costs": true },
+      { "key": "D", "created_at": "2026-10-01T08:03:00.000Z", "shares_costs": true }
+    ],
+    "purchases": [
+      { "paid_by": "A", "amount_cents": 1001, "scope": "common" }
+    ],
+    "expected": {
+      "total_cents": 1001, "during_cents": 1001, "big_shop_cents": 0, "has_big_shop": false, "sharers_count": 4,
+      "people": [
+        { "key": "A", "share_cents": 251, "paid_cents": 1001, "paid_before_big_cents": 1001, "balance_cents": 750 },
+        { "key": "B", "share_cents": 250, "paid_cents": 0, "paid_before_big_cents": 0, "balance_cents": -250 },
+        { "key": "C", "share_cents": 250, "paid_cents": 0, "paid_before_big_cents": 0, "balance_cents": -250 },
+        { "key": "D", "share_cents": 250, "paid_cents": 0, "paid_before_big_cents": 0, "balance_cents": -250 }
+      ],
+      "transfers": [
+        { "from": "B", "to": "A", "amount_cents": 250 },
+        { "from": "C", "to": "A", "amount_cents": 250 },
+        { "from": "D", "to": "A", "amount_cents": 250 }
+      ]
+    }
+  },
+  {
+    "name": "Remainder of 3 cents; created_at order wins over list order",
+    "members": [
+      { "key": "D", "created_at": "2026-10-01T08:03:00.000Z", "shares_costs": true },
+      { "key": "B", "created_at": "2026-10-01T08:01:00.000Z", "shares_costs": true },
+      { "key": "A", "created_at": "2026-10-01T08:00:00.000Z", "shares_costs": true },
+      { "key": "C", "created_at": "2026-10-01T08:02:00.000Z", "shares_costs": true }
+    ],
+    "purchases": [
+      { "paid_by": "D", "amount_cents": 10003, "scope": "common" }
+    ],
+    "expected": {
+      "total_cents": 10003, "during_cents": 10003, "big_shop_cents": 0, "has_big_shop": false, "sharers_count": 4,
+      "people": [
+        { "key": "A", "share_cents": 2501, "paid_cents": 0, "paid_before_big_cents": 0, "balance_cents": -2501 },
+        { "key": "B", "share_cents": 2501, "paid_cents": 0, "paid_before_big_cents": 0, "balance_cents": -2501 },
+        { "key": "C", "share_cents": 2501, "paid_cents": 0, "paid_before_big_cents": 0, "balance_cents": -2501 },
+        { "key": "D", "share_cents": 2500, "paid_cents": 10003, "paid_before_big_cents": 10003, "balance_cents": 7503 }
+      ],
+      "transfers": [
+        { "from": "A", "to": "D", "amount_cents": 2501 },
+        { "from": "B", "to": "D", "amount_cents": 2501 },
+        { "from": "C", "to": "D", "amount_cents": 2501 }
+      ]
+    }
+  },
+  {
+    "name": "Nothing bought: 0 €",
+    "members": [
+      { "key": "A", "created_at": "2026-10-01T08:00:00.000Z", "shares_costs": true },
+      { "key": "B", "created_at": "2026-10-01T08:01:00.000Z", "shares_costs": true },
+      { "key": "K", "created_at": "2026-10-01T08:02:00.000Z", "shares_costs": false, "kind": "child" }
+    ],
+    "purchases": [],
+    "expected": {
+      "total_cents": 0, "during_cents": 0, "big_shop_cents": 0, "has_big_shop": false, "sharers_count": 2,
+      "people": [
+        { "key": "A", "share_cents": 0, "paid_cents": 0, "paid_before_big_cents": 0, "balance_cents": 0 },
+        { "key": "B", "share_cents": 0, "paid_cents": 0, "paid_before_big_cents": 0, "balance_cents": 0 }
+      ],
+      "transfers": []
+    }
+  },
+  {
+    "name": "Everyone paid the same: no transfers",
+    "members": [
+      { "key": "A", "created_at": "2026-10-01T08:00:00.000Z", "shares_costs": true },
+      { "key": "B", "created_at": "2026-10-01T08:01:00.000Z", "shares_costs": true },
+      { "key": "C", "created_at": "2026-10-01T08:02:00.000Z", "shares_costs": true }
+    ],
+    "purchases": [
+      { "paid_by": "A", "amount_cents": 2500, "scope": "common" },
+      { "paid_by": "B", "amount_cents": 1000, "scope": "common" },
+      { "paid_by": "B", "amount_cents": 1500, "scope": "common" },
+      { "paid_by": "C", "amount_cents": 2500, "scope": "common" }
+    ],
+    "expected": {
+      "total_cents": 7500, "during_cents": 7500, "big_shop_cents": 0, "has_big_shop": false, "sharers_count": 3,
+      "people": [
+        { "key": "A", "share_cents": 2500, "paid_cents": 2500, "paid_before_big_cents": 2500, "balance_cents": 0 },
+        { "key": "B", "share_cents": 2500, "paid_cents": 2500, "paid_before_big_cents": 2500, "balance_cents": 0 },
+        { "key": "C", "share_cents": 2500, "paid_cents": 2500, "paid_before_big_cents": 2500, "balance_cents": 0 }
+      ],
+      "transfers": []
+    }
+  },
+  {
+    "name": "Month closing after the big shop; personal and deleted purchases ignored; child does not pay",
+    "members": [
+      { "key": "J", "created_at": "2026-10-01T08:00:00.000Z", "shares_costs": true },
+      { "key": "E", "created_at": "2026-10-01T08:01:00.000Z", "shares_costs": true },
+      { "key": "H", "created_at": "2026-10-01T08:02:00.000Z", "shares_costs": true },
+      { "key": "C", "created_at": "2026-10-01T08:03:00.000Z", "shares_costs": true },
+      { "key": "S", "created_at": "2026-10-01T08:04:00.000Z", "shares_costs": false, "kind": "child" }
+    ],
+    "purchases": [
+      { "paid_by": "J", "amount_cents": 8000, "scope": "common" },
+      { "paid_by": "E", "amount_cents": 2500, "scope": "common" },
+      { "paid_by": "H", "amount_cents": 4000, "scope": "common" },
+      { "paid_by": "C", "amount_cents": 390, "scope": "personal" },
+      { "paid_by": "E", "amount_cents": 999, "scope": "common", "deleted": true },
+      { "paid_by": "J", "amount_cents": 45500, "scope": "common", "is_big_shop": true }
+    ],
+    "expected": {
+      "total_cents": 60000, "during_cents": 14500, "big_shop_cents": 45500, "has_big_shop": true, "sharers_count": 4,
+      "people": [
+        { "key": "J", "share_cents": 15000, "paid_cents": 53500, "paid_before_big_cents": 8000, "balance_cents": 38500 },
+        { "key": "E", "share_cents": 15000, "paid_cents": 2500, "paid_before_big_cents": 2500, "balance_cents": -12500 },
+        { "key": "H", "share_cents": 15000, "paid_cents": 4000, "paid_before_big_cents": 4000, "balance_cents": -11000 },
+        { "key": "C", "share_cents": 15000, "paid_cents": 0, "paid_before_big_cents": 0, "balance_cents": -15000 }
+      ],
+      "transfers": [
+        { "from": "C", "to": "J", "amount_cents": 15000 },
+        { "from": "E", "to": "J", "amount_cents": 12500 },
+        { "from": "H", "to": "J", "amount_cents": 11000 }
+      ]
+    }
+  },
+  {
+    "name": "An adult who does not share costs but paid a common purchase is paid back",
+    "members": [
+      { "key": "A", "created_at": "2026-10-01T08:00:00.000Z", "shares_costs": true },
+      { "key": "B", "created_at": "2026-10-01T08:01:00.000Z", "shares_costs": true },
+      { "key": "C", "created_at": "2026-10-01T08:02:00.000Z", "shares_costs": true },
+      { "key": "D", "created_at": "2026-10-01T08:03:00.000Z", "shares_costs": false }
+    ],
+    "purchases": [
+      { "paid_by": "D", "amount_cents": 900, "scope": "common" }
+    ],
+    "expected": {
+      "total_cents": 900, "during_cents": 900, "big_shop_cents": 0, "has_big_shop": false, "sharers_count": 3,
+      "people": [
+        { "key": "A", "share_cents": 300, "paid_cents": 0, "paid_before_big_cents": 0, "balance_cents": -300 },
+        { "key": "B", "share_cents": 300, "paid_cents": 0, "paid_before_big_cents": 0, "balance_cents": -300 },
+        { "key": "C", "share_cents": 300, "paid_cents": 0, "paid_before_big_cents": 0, "balance_cents": -300 },
+        { "key": "D", "share_cents": 0, "paid_cents": 900, "paid_before_big_cents": 900, "balance_cents": 900 }
+      ],
+      "transfers": [
+        { "from": "A", "to": "D", "amount_cents": 300 },
+        { "from": "B", "to": "D", "amount_cents": 300 },
+        { "from": "C", "to": "D", "amount_cents": 300 }
+      ]
+    }
+  }
+]

@@ -1,0 +1,24 @@
+{
+  "name": "casa-comun",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Casa Común — household shopping, shared costs and chores rota. By SophieNexus.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test \"tests/unit/*.test.mjs\" \"supabase/tests/*.test.mjs\"",
+    "test:unit": "node --test \"tests/unit/*.test.mjs\"",
+    "test:db": "node --test \"supabase/tests/*.test.mjs\"",
+    "test:e2e": "playwright test",
+    "test:rls-live": "node supabase/tests/live/rls-live.mjs",
+    "serve": "node tests/support/dev-server.mjs",
+    "vendor": "node scripts/vendor.mjs"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.3.0",
+    "@fontsource/bricolage-grotesque": "^5.0.0",
+    "@fontsource/figtree": "^5.0.0",
+    "@playwright/test": "1.63.0",
+    "@supabase/supabase-js": "^2.45.0",
+    "ws": "^8.18.0"
+  }
+}
