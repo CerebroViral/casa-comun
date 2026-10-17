@@ -1,7 +1,7 @@
 // Service worker: keeps the app shell on the phone so it opens without signal. Supabase calls (another
 // origin) are never cached here — offline data lives in IndexedDB (js/store.js).
 // Bump the version on every release so phones pick up the new files.
-const CACHE = 'cc-app-1';
+const CACHE = 'cc-app-2';
 
 const SHELL = [
   './',

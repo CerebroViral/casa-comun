@@ -15,3 +15,6 @@ Thumbs.db
 
 # Family photo used only as a design reference: stays on this PC, never published
 docs/disenos/cuadro-tareas-referencia.jpg
+
+# Local helpers that talk to the real Supabase project
+*.local.mjs
