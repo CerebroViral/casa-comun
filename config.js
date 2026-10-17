@@ -3,5 +3,5 @@
 window.CC_CONFIG = {
   supabaseUrl: 'https://TU-PROYECTO.supabase.co',
   supabaseAnonKey: 'PEGA-AQUI-LA-ANON-KEY',
-  appUrl: 'https://sophienexus.github.io/casa-comun/',
+  appUrl: 'https://cerebroviral.github.io/casa-comun/',
 };

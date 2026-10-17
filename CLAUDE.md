@@ -42,7 +42,7 @@ Read these before writing code, in this order:
 | --- | --- |
 | App | Vanilla PWA (HTML/CSS/JS modules), service worker, IndexedDB queue |
 | Backend | Supabase (Postgres + Auth + Realtime + Edge Functions), region EU (Frankfurt) |
-| Hosting | GitHub Pages, repo `casa-comun` on the SophieNexus GitHub account |
+| Hosting | GitHub Pages, repo `casa-comun` on the **CerebroViral** GitHub account (Jorge, 2026-10-17; the brand/footer stays SophieNexus) |
 | Android | APK generated from the hosted PWA with PWABuilder (Trusted Web Activity) + `/.well-known/assetlinks.json` |
 | iPhone | Same PWA, installed from Safari → "Añadir a pantalla de inicio" (no App Store) |
 | Recipes AI | Supabase Edge Function calling the Anthropic API (Phase 2) |

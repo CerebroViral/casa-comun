@@ -30,8 +30,8 @@ Lo que está entre `comillas así` es exactamente lo que tienes que escribir o b
    - `Authentication` → `Sign In / Providers` → `Email` → desactiva `Confirm email` → `Save`.
 5. Para que funcione "He olvidado la contraseña":
    - `Authentication` → `URL Configuration`.
-   - **Site URL:** `https://sophienexus.github.io/casa-comun/` → `Save`.
-   - **Redirect URLs** → `Add URL` → `https://sophienexus.github.io/casa-comun/` → `Save`.
+   - **Site URL:** `https://cerebroviral.github.io/casa-comun/` → `Save`.
+   - **Redirect URLs** → `Add URL` → `https://cerebroviral.github.io/casa-comun/` → `Save`.
 6. Copia estas dos cosas y pásamelas por el chat (son públicas, no pasa nada):
    - `Project Settings` (la rueda dentada) → `Data API` → **Project URL** (`https://xxxx.supabase.co`).
    - `Project Settings` → `API Keys` → la clave **anon public** (o **publishable**).
@@ -45,9 +45,9 @@ Yo la pongo en `config.js`, compruebo la seguridad con dos usuarios de prueba en
 
 ---
 
-## 2. Publicar la app (GitHub Pages, cuenta SophieNexus)
+## 2. Publicar la app (GitHub Pages, cuenta CerebroViral)
 
-1. Entra en <https://github.com> con la cuenta **SophieNexus**.
+1. Entra en <https://github.com> con la cuenta **CerebroViral**.
 2. Arriba a la derecha `+` → `New repository`:
    - **Repository name:** `casa-comun`
    - **Public**
@@ -59,7 +59,7 @@ Yo la pongo en `config.js`, compruebo la seguridad con dos usuarios de prueba en
    - En el repositorio → `Settings` → `Pages` (menú de la izquierda).
    - **Source:** `Deploy from a branch`.
    - **Branch:** `main` y carpeta `/ (root)` → `Save`.
-   - En 1–2 minutos estará en **<https://sophienexus.github.io/casa-comun/>**.
+   - En 1–2 minutos estará en **<https://cerebroviral.github.io/casa-comun/>**.
 
 ---
 
@@ -80,10 +80,10 @@ Dentro de la app, en `Casa` → `Cómo instalar la app` están los mismos pasos 
 
 ## 4. APK de Android con PWABuilder
 
-1. Entra en <https://www.pwabuilder.com>, pega `https://sophienexus.github.io/casa-comun/` y pulsa `Start`.
+1. Entra en <https://www.pwabuilder.com>, pega `https://cerebroviral.github.io/casa-comun/` y pulsa `Start`.
 2. Pulsa `Package For Stores` → en **Android** pulsa `Generate Package`.
 3. Rellena (lo demás déjalo como está):
-   - **Package ID:** `io.github.sophienexus.casacomun`
+   - **Package ID:** `io.github.cerebroviral.casacomun`
    - **App name:** `Casa Común` · **Short name:** `Casa Común`
    - **Signing key:** `Create new` (PWABuilder crea la clave de firma).
    - Pulsa `Download Package`.
@@ -100,8 +100,8 @@ Dentro de la app, en `Casa` → `Cómo instalar la app` están los mismos pasos 
    `Permitir instalar aplicaciones de esta fuente`.
 
 **Detalle técnico importante (lo hago yo):** Android comprueba la huella en
-`https://sophienexus.github.io/.well-known/assetlinks.json`, es decir, en la **raíz** del dominio, que en
-GitHub es otro repositorio llamado `SophieNexus.github.io`. Si ese repositorio no existe, te pediré que lo crees
+`https://cerebroviral.github.io/.well-known/assetlinks.json`, es decir, en la **raíz** del dominio, que en
+GitHub es otro repositorio llamado `CerebroViral.github.io`. Si ese repositorio no existe, te pediré que lo crees
 igual que el paso 2 (vacío y público) y yo subo ahí el archivo. Mientras tanto el APK funciona igual,
 solo que se ve una barra fina con la dirección arriba.
 
